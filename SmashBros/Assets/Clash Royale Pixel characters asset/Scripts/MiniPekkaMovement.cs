@@ -17,6 +17,8 @@ public class MiniPekkaMovement : MonoBehaviour
     private bool isgrounded = false;
     private int jumpCount = 0;
     private int maxJumps = 1;
+
+    public int playerId = 0;
     
     private float horizontalMovement;
     private Vector3 velocity = Vector3.zero;
@@ -34,6 +36,7 @@ public class MiniPekkaMovement : MonoBehaviour
            if (Input.GetButtonDown("Jump"))
            {
                isAttacking = true;
+                gameObject.GetComponent<AttackScript>().setIsAttacking(true);
                StartCoroutine(PekkaAttack());
            }
         }
@@ -44,14 +47,14 @@ public class MiniPekkaMovement : MonoBehaviour
             Jump();
         }
         
-        if (!isAttacking)
-        {
+        // if (!isAttacking)
+        // {
             horizontalMovement = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
-        }
-        else
-        {
-            horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
-        }
+        // }
+        // else
+        // {
+            // horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
+        // }
         Flip(rb.linearVelocity.x);
         float characterVelocity = Mathf.Abs(rb.linearVelocity.x);
         animator.SetFloat("MiniPekkaSpeed", characterVelocity);
@@ -62,14 +65,14 @@ public class MiniPekkaMovement : MonoBehaviour
     void FixedUpdate()
     {
         
-        if (!isAttacking)
-        {
+        // if (!isAttacking)
+        // {
             horizontalMovement = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
-        }
-        else
-        {
-            horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
-        }
+        // }
+        // else
+        // {
+            // horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
+        // }
         MoveMiniPekka(horizontalMovement);
         
         
@@ -145,6 +148,7 @@ public class MiniPekkaMovement : MonoBehaviour
         animator.SetTrigger("MiniPekkaAttack");
         yield return new WaitForSeconds(.4f);
         isAttacking = false;
+        gameObject.GetComponent<AttackScript>().setIsAttacking(false);
     }
     
     public void ResetAnimation()
@@ -158,6 +162,7 @@ public class MiniPekkaMovement : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            gameObject.GetComponent<AttackScript>().setIsAttacking(true);
             StartCoroutine(PekkaAttack());
         }
     }

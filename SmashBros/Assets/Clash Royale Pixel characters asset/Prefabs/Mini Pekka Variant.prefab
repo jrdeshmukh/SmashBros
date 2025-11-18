@@ -48,12 +48,63 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 562113602695415333, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      propertyPath: Speed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513040022136065279, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513040022136065279, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7480582415647328087, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
       propertyPath: m_Name
-      value: Mini Pekka
+      value: Mini Pekka Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7480582415647328087, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5934915521131003073}
+    - targetCorrespondingSourceObject: {fileID: 7480582415647328087, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8605476328529857777}
   m_SourcePrefab: {fileID: 100100000, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+--- !u!1 &8970582059606327828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7480582415647328087, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+  m_PrefabInstance: {fileID: 1994451181696615747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5934915521131003073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970582059606327828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b928ae5e6456234cb4ddda354b16e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerId
+  playerId: 0
+--- !u!114 &8605476328529857777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970582059606327828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2ef6e28584c7546a4c3f6d39049f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackScript
+  isAttacking: 0
+  attackX: 50
+  attackY: 20
