@@ -55,7 +55,7 @@ public class MiniPekkaMovement : MonoBehaviour
         Flip(rb.linearVelocity.x);
         float characterVelocity = Mathf.Abs(rb.linearVelocity.x);
         animator.SetFloat("MiniPekkaSpeed", characterVelocity);
-        UnityEngine.Debug.Log(isgrounded);
+        // UnityEngine.Debug.Log(isgrounded);
         
     }
     
