@@ -60,7 +60,7 @@ public class SkeletonMovement : MonoBehaviour
         Flip(rb.linearVelocity.x);
         float characterVelocity = Mathf.Abs(rb.linearVelocity.x);
         animator.SetFloat("SkeletonSpeed", characterVelocity);
-        UnityEngine.Debug.Log(isgrounded);
+        // UnityEngine.Debug.Log(isgrounded);
         
     }
     

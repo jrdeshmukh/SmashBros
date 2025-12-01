@@ -21,6 +21,7 @@ public class AttackScript : MonoBehaviour
             int otherId = other.GetComponent<PlayerId>().playerId;
             GameController.playerHealths[otherId] *= GameController.playerDamages[myId];
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(attackX, attackY));
+            UnityEngine.Debug.Log("attack");
         }
 
     }
