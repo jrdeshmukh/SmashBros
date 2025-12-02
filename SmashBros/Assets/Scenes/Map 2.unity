@@ -4223,6 +4223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507446998}
   - component: {fileID: 507446999}
+  - component: {fileID: 507447000}
   m_Layer: 0
   m_Name: DirtPlatform (1)
   m_TagString: ground
@@ -4297,6 +4298,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.747847, y: 2.0374641}
   m_EdgeRadius: 0
+--- !u!251 &507447000
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507446997}
+  m_Enabled: 0
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &509548528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,6 +4690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554551928}
   - component: {fileID: 554551929}
+  - component: {fileID: 554551930}
   m_Layer: 0
   m_Name: DirtPlatform (4)
   m_TagString: ground
@@ -4744,6 +4765,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.894986, y: 1.9092691}
   m_EdgeRadius: 0
+--- !u!251 &554551930
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554551927}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &562603601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6641,6 +6681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 762592061}
   - component: {fileID: 762592062}
+  - component: {fileID: 762592063}
   m_Layer: 0
   m_Name: DirtPlatform (2)
   m_TagString: ground
@@ -6715,6 +6756,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.84413, y: 1.8395491}
   m_EdgeRadius: 0
+--- !u!251 &762592063
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762592060}
+  m_Enabled: 0
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &784067158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11492,6 +11552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272245359}
   - component: {fileID: 1272245360}
+  - component: {fileID: 1272245361}
   m_Layer: 0
   m_Name: DirtPlatform (7)
   m_TagString: ground
@@ -11566,6 +11627,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.948471, y: 1.8825254}
   m_EdgeRadius: 0
+--- !u!251 &1272245361
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272245358}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1280116388
 GameObject:
   m_ObjectHideFlags: 0
@@ -13056,6 +13136,10 @@ PrefabInstance:
     - target: {fileID: 4742081140199786940, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
       propertyPath: m_GravityScale
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742081140199786940, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970582059606327828, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
       propertyPath: m_Name
@@ -19889,6 +19973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2050894390}
   - component: {fileID: 2050894391}
+  - component: {fileID: 2050894392}
   m_Layer: 0
   m_Name: DirtPlatform (5)
   m_TagString: ground
@@ -19963,6 +20048,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.740185, y: 1.7583594}
   m_EdgeRadius: 0
+--- !u!251 &2050894392
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050894389}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2055180852
 GameObject:
   m_ObjectHideFlags: 0
@@ -20510,6 +20614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2123967074}
   - component: {fileID: 2123967075}
+  - component: {fileID: 2123967076}
   m_Layer: 0
   m_Name: DirtPlatform (6)
   m_TagString: ground
@@ -20584,6 +20689,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.841501, y: 1.8022966}
   m_EdgeRadius: 0
+--- !u!251 &2123967076
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123967073}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 1
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &2126380020
 PrefabInstance:
   m_ObjectHideFlags: 0
