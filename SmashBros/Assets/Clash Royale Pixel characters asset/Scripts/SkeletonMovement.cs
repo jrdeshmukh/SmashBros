@@ -35,6 +35,7 @@ public class SkeletonMovement : MonoBehaviour
         if (!isAttacking && Input.GetKeyDown(KeyCode.Return))
         {
             isAttacking = true;
+            gameObject.GetComponent<AttackScript>().setIsAttacking(true);
             StartCoroutine(PekkaAttack());
         }
         
@@ -44,7 +45,7 @@ public class SkeletonMovement : MonoBehaviour
             Jump();
         }
         
-        // Horizontal movement (I for left, L for right)
+        // Horizontal movement (J for left, L for right)
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.J)) moveInput = -1f;  // Move left
         else if (Input.GetKey(KeyCode.L)) moveInput = 1f;  // Move right
@@ -68,7 +69,7 @@ public class SkeletonMovement : MonoBehaviour
     {
         // Horizontal movement (I for left, L for right)
         float moveInput = 0f;
-        if (Input.GetKey(KeyCode.I)) moveInput = -1f;  // Move left
+        if (Input.GetKey(KeyCode.J)) moveInput = -1f;  // Move left
         else if (Input.GetKey(KeyCode.L)) moveInput = 1f;  // Move right
         
         if (!isAttacking)
@@ -163,6 +164,7 @@ public class SkeletonMovement : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            gameObject.GetComponent<AttackScript>().setIsAttacking(true);
             StartCoroutine(PekkaAttack());
         }
     }
