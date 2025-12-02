@@ -1,39 +1,42 @@
 using UnityEngine;
+using UnityEngine.UI;   // Needed for Text UI
 
 public class Health : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int maxHits = 12;     // total hits character can take
+    private int currentHits = 0; // tracks how many times character got hit
+
+    public Text knockoutText;    // drag your UI Text object into this in Inspector
+
     void Start()
     {
-        
+        if (knockoutText != null)
+            knockoutText.gameObject.SetActive(false); // hide at start
     }
 
-    public float weight, damage; 
-
-    public bool isDead = false;
-    
-    private float die = 0; 
-    public int deathThreshold = 500;
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        
 
-        //If collision
-        // add damage
-        if (){// if there is a collision with the character
-            die = Random.Range(0f, 5f)
-            if (damageDealt * die * weight > deathThreshold ){
-                isDead = true;
-            }
-            else(){
-                healthPercent += damageDealt; 
-            }
+        currentHits++;
+
+        if (currentHits >= maxHits)
+        {
+            KnockOut();
         }
-        
-        
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+
+    void KnockOut()
     {
         
+        if (knockoutText != null)
+        {
+            knockoutText.text = "KNOCK OUT!";
+            knockoutText.gameObject.SetActive(true);
+            
+        }
+
+        // Remove character
+        Destroy(gameObject);
     }
 }
