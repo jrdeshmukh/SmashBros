@@ -6,8 +6,9 @@ public class Health : MonoBehaviour
     public int maxHits = 12;     // total hits character can take
     private int currentHits = 0; // tracks how many times character got hit
 
-    public Text knockoutText;    // drag your UI Text object into this in Inspector
-
+    
+    public Canvas canvas;     // Canvas with UI elements
+    public Text knockoutText;
     void Start()
     {
         if (knockoutText != null)

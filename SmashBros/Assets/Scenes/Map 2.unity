@@ -4504,6 +4504,25 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &533426607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8970582059606327828, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
+  m_PrefabInstance: {fileID: 1409527814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &533426616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533426607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3c30beada2f0d48bf1fb8ff9a82bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHits: 12
+  knockoutText: {fileID: 0}
 --- !u!1001 &548075578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13044,7 +13063,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8970582059606327828, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 533426616}
   m_SourcePrefab: {fileID: 100100000, guid: cf2619a394220ee45a510ffe40a5025d, type: 3}
 --- !u!1001 &1416681453
 PrefabInstance:
