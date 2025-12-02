@@ -208,13 +208,14 @@ GameObject:
   m_Component:
   - component: {fileID: 493523406}
   - component: {fileID: 493523407}
+  - component: {fileID: 493523408}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &493523406
 Transform:
   m_ObjectHideFlags: 0
@@ -241,7 +242,21 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1545fa93b0acc64c988f7b8d2a04a5d, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSelector
+  yourButton: {fileID: 0}
+--- !u!114 &493523408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493523405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e229f2a1fcad81e41a952a3653337e4c, type: 3}
+  m_Name: 
   m_EditorClassIdentifier: '::'
+  yourButton: {fileID: 0}
 --- !u!1 &634270057
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +372,7 @@ GameObject:
   - component: {fileID: 729386149}
   - component: {fileID: 729386148}
   - component: {fileID: 729386147}
+  - component: {fileID: 729386150}
   m_Layer: 5
   m_Name: Forest Map Button
   m_TagString: Untagged
@@ -427,19 +443,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729386148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: c1545fa93b0acc64c988f7b8d2a04a5d, type: 3}
-        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Map 2
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &729386148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,6 +482,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729386145}
   m_CullTransparentMesh: 1
+--- !u!114 &729386150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729386145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e229f2a1fcad81e41a952a3653337e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSelectorForest
+  yourButton: {fileID: 729386147}
 --- !u!1 &734350848
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +871,7 @@ GameObject:
   - component: {fileID: 1870210718}
   - component: {fileID: 1870210717}
   - component: {fileID: 1870210716}
+  - component: {fileID: 1870210719}
   m_Layer: 5
   m_Name: Zelda Map Button
   m_TagString: Untagged
@@ -924,19 +942,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1870210717}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: c1545fa93b0acc64c988f7b8d2a04a5d, type: 3}
-        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Zelda Map
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1870210717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +981,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870210714}
   m_CullTransparentMesh: 1
+--- !u!114 &1870210719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870210714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1545fa93b0acc64c988f7b8d2a04a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSelectorZelda
+  yourButton: {fileID: 1870210716}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
