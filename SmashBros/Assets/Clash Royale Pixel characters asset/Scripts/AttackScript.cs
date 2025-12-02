@@ -7,7 +7,7 @@ public class AttackScript : MonoBehaviour
 
     public bool isAttacking = false;
     public float attackX = 50f;
-    public float attackY = 20f;
+    public float attackY = 10f;
     public bool colliding = false;
     private int myId;
 
@@ -15,10 +15,20 @@ public class AttackScript : MonoBehaviour
     {
         myId = GetComponent<PlayerId>().playerId;
     }
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!isAttacking) return;
+        PlayerId otherId = other.gameObject.GetComponent<PlayerId>();
+        colliding = true;
+        if (otherId == null) {
+            colliding = false;
+            return;
+        };
+        isAttacking = false;
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
         
         PlayerId otherId = other.gameObject.GetComponent<PlayerId>();
         colliding = true;
@@ -26,6 +36,11 @@ public class AttackScript : MonoBehaviour
             colliding = false;
             return;
         };
+        Debug.Log($"Collision stay with {other.gameObject.name} and isAttacking: {isAttacking}");
+
+        if (!getIsAttacking()) return;
+
+
         
         Rigidbody2D otherRb = other.gameObject.GetComponent<Rigidbody2D>();
         if (otherRb == null) {
