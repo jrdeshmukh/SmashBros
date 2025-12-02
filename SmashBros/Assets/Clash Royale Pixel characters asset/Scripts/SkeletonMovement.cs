@@ -117,7 +117,7 @@ public class SkeletonMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
@@ -128,7 +128,7 @@ public class SkeletonMovement : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
@@ -138,7 +138,7 @@ public class SkeletonMovement : MonoBehaviour
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision exit with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision exit with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = false;

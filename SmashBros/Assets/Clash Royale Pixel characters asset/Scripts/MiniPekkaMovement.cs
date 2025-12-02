@@ -34,23 +34,29 @@ public class MiniPekkaMovement : MonoBehaviour
            if (Input.GetButtonDown("Jump"))
            {
                isAttacking = true;
+               gameObject.GetComponent<AttackScript>().setIsAttacking(true);
                StartCoroutine(PekkaAttack());
            }
         }
         
-        // Jump input
-        if (Input.GetButtonDown("Vertical") && (isgrounded || jumpCount < maxJumps))
+        // Jump input (J key)
+        if (Input.GetKeyDown(KeyCode.W) && (isgrounded || jumpCount < maxJumps))
         {
             Jump();
         }
         
+        // Horizontal movement (I for left, L for right)
+        float moveInput = 0f;
+        if (Input.GetKey(KeyCode.A)) moveInput = -1f;  // Move left
+        else if (Input.GetKey(KeyCode.D)) moveInput = 1f;  // Move right
+        
         if (!isAttacking)
         {
-            horizontalMovement = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+            horizontalMovement = moveInput * Speed * Time.deltaTime;
         }
         else
         {
-            horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
+            horizontalMovement = 0;
         }
         Flip(rb.linearVelocity.x);
         float characterVelocity = Mathf.Abs(rb.linearVelocity.x);
@@ -112,7 +118,7 @@ public class MiniPekkaMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
@@ -123,7 +129,7 @@ public class MiniPekkaMovement : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = true;
@@ -133,7 +139,7 @@ public class MiniPekkaMovement : MonoBehaviour
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        UnityEngine.Debug.Log("Collision exit with: " + collision.gameObject.name);
+        // UnityEngine.Debug.Log("Collision exit with: " + collision.gameObject.name);
         if (collision.gameObject.CompareTag("ground"))
         {
             isgrounded = false;
@@ -158,6 +164,7 @@ public class MiniPekkaMovement : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            gameObject.GetComponent<AttackScript>().setIsAttacking(true);
             StartCoroutine(PekkaAttack());
         }
     }
