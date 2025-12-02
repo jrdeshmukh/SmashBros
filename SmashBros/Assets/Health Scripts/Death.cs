@@ -52,7 +52,9 @@ public class FallDeath : MonoBehaviour
 
     void Respawn()
     {
+
         knockoutCanvas.gameObject.SetActive(false);
+        GameController.playerHealths = new float[]{1,1};
         gameObject.SetActive(true);
         transform.position = spawn;
         lives--;
