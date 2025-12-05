@@ -255,6 +255,8 @@ MonoBehaviour:
   valkyrieButton: {fileID: 865133460}
   barbarianButton: {fileID: 2017997059}
   skeletonButton: {fileID: 1432344786}
+  playerCharacters: []
+  Self: {fileID: 8319471}
 --- !u!1 &15471267
 GameObject:
   m_ObjectHideFlags: 0

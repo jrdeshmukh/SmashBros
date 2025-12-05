@@ -1,3 +1,4 @@
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,7 +39,7 @@ public class PlayerSelect : MonoBehaviour
         Button giantbtn = giantButton.GetComponent<Button>();
         giantbtn.onClick.AddListener(OnGiantButtonClick);
 
-        Button goblinbtn = giantButton.GetComponent<Button>();
+        Button goblinbtn = goblinButton.GetComponent<Button>();
         goblinbtn.onClick.AddListener(OnGoblinButtonClick);
 
         Button skeletonbtn = skeletonButton.GetComponent<Button>();
@@ -47,14 +48,14 @@ public class PlayerSelect : MonoBehaviour
         Button barbarianbtn = barbarianButton.GetComponent<Button>();
         barbarianbtn.onClick.AddListener(OnBarbarianButtonClick);
 
-        Button valkyriebtn = mpButton.GetComponent<Button>();
+        Button valkyriebtn = valkyrieButton.GetComponent<Button>();
         valkyriebtn.onClick.AddListener(OnValkyrieButtonClick);
 
         Button knightbtn = knightButton.GetComponent<Button>();
         knightbtn.onClick.AddListener(OnKnightButtonClick);
 
         Button hogbtn = hogRiderButton.GetComponent<Button>();
-        mpbtn.onClick.AddListener(OnHogButtonClick);
+        hogbtn.onClick.AddListener(OnHogButtonClick);
 
         Button minionbtn = minionButton.GetComponent<Button>();
         minionbtn.onClick.AddListener(OnMinionButtonClick);
@@ -287,11 +288,70 @@ public class PlayerSelect : MonoBehaviour
         }
     }
 
-    
+    public string[] playerCharacters;
+    public GameObject Self;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if ((player1 == "Minion" || player1  == "Barbarian" || player1 == "Hog Rider" || player1 == "Goblin" || player1 == "Giant" || player1 == "Skeleton" || player1 == "Mini Pekka" || player1 == "Valkyrie" || player1 == "Knight") &&
+            (player2 == "Minion" || player2 == "Barbarian" || player2 == "Hog Rider" || player2 == "Goblin" || player2 == "Giant" || player2 == "Skeleton" || player2 == "Mini Pekka" || player2 == "Valkyrie" || player2 == "Knight") &&
+            (player3 == "Minion" || player3 == "Barbarian" || player3 == "Hog Rider" || player3 == "Goblin" || player3 == "Giant" || player3 == "Skeleton" || player3 == "Mini Pekka" || player3 == "Valkyrie" || player3 == "Knight") &&
+            (player4 == "Minion" || player4 == "Barbarian" || player4 == "Hog Rider" || player4 == "Goblin" || player4 == "Giant" || player4 == "Skeleton" || player4 == "Mini Pekka" || player4 == "Valkyrie" || player4 == "Knight"))
+        {
+            playerCharacters.Append(player1);
+            playerCharacters.Append(player2);
+            playerCharacters.Append(player3);
+            playerCharacters.Append(player4);
+            Debug.Log(playerCharacters);
+
+            for (int i= 0; i < playerCharacters.Length; i++)
+            {
+                if (playerCharacters[i] == "Mini Pekka")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Giant")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Goblin")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Barbarian")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Valkyrie")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Minion")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Knight")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Hog Rider")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Mini Pekka")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+                if (playerCharacters[i] == "Skeleton")
+                {
+                    Debug.Log(playerCharacters[i] + " " + i);
+                }
+
+            }
+
+            Self.SetActive(false);
+
+        }
     }
 }
