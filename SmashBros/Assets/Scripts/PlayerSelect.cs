@@ -294,7 +294,7 @@ public class PlayerSelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((player1 == "Minion" || player1  == "Barbarian" || player1 == "Hog Rider" || player1 == "Goblin" || player1 == "Giant" || player1 == "Skeleton" || player1 == "Mini Pekka" || player1 == "Valkyrie" || player1 == "Knight") &&
+        if ((player1 == "Minion" || player1 == "Barbarian" || player1 == "Hog Rider" || player1 == "Goblin" || player1 == "Giant" || player1 == "Skeleton" || player1 == "Mini Pekka" || player1 == "Valkyrie" || player1 == "Knight") &&
             (player2 == "Minion" || player2 == "Barbarian" || player2 == "Hog Rider" || player2 == "Goblin" || player2 == "Giant" || player2 == "Skeleton" || player2 == "Mini Pekka" || player2 == "Valkyrie" || player2 == "Knight") &&
             (player3 == "Minion" || player3 == "Barbarian" || player3 == "Hog Rider" || player3 == "Goblin" || player3 == "Giant" || player3 == "Skeleton" || player3 == "Mini Pekka" || player3 == "Valkyrie" || player3 == "Knight") &&
             (player4 == "Minion" || player4 == "Barbarian" || player4 == "Hog Rider" || player4 == "Goblin" || player4 == "Giant" || player4 == "Skeleton" || player4 == "Mini Pekka" || player4 == "Valkyrie" || player4 == "Knight"))
