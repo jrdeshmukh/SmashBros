@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 8319472}
   - component: {fileID: 8319476}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Player Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,15 @@ MonoBehaviour:
   valkyrieButton: {fileID: 865133460}
   barbarianButton: {fileID: 2017997059}
   skeletonButton: {fileID: 1432344786}
-  playerCharacters: []
+  MiniPekka: {fileID: 1641188747}
+  Skeleton: {fileID: 726600873}
+  Minion: {fileID: 0}
+  Hog: {fileID: 0}
+  Goblin: {fileID: 0}
+  Knight: {fileID: 0}
+  Valkyrie: {fileID: 0}
+  Barbarian: {fileID: 0}
+  Giant: {fileID: 0}
   Self: {fileID: 8319471}
 --- !u!1 &15471267
 GameObject:
@@ -8226,6 +8234,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &726600873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5817847871588190848, guid: a6f54a4cbe6be374aab8a0d313fb19fc, type: 3}
+  m_PrefabInstance: {fileID: 5137231803332633445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738803571
 GameObject:
   m_ObjectHideFlags: 0
@@ -19127,6 +19140,11 @@ Transform:
   - {fileID: 1836927646}
   m_Father: {fileID: 384238399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1641188747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910692780749766852, guid: 4b39e7384ede6ce44ba5145831bf8e6b, type: 3}
+  m_PrefabInstance: {fileID: 4812722114170983392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642880431
 GameObject:
   m_ObjectHideFlags: 0

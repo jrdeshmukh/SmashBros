@@ -2,6 +2,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerSelect : MonoBehaviour
 {
@@ -20,15 +21,15 @@ public class PlayerSelect : MonoBehaviour
     public Button barbarianButton;
     public Button skeletonButton;
 
-    MiniPekkaMovement MP;
-    SkeletonMovement SM;
-    MinionMovement MM;
-    HogRiderMovement HR;
-    GoblinMovement GM;
-    KnightMovement KM;
-    ValkyrieMovement VM;
-    BarbarianMovement BM;
-    GiantMovement GiantM;
+    public GameObject MiniPekka;
+    public GameObject Skeleton;
+    public GameObject Minion;
+    public GameObject Hog;
+    public GameObject Goblin;
+    public GameObject Knight;
+    public GameObject Valkyrie;
+    public GameObject Barbarian;
+    public GameObject Giant;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -288,7 +289,7 @@ public class PlayerSelect : MonoBehaviour
         }
     }
 
-    public string[] playerCharacters;
+    public ArrayList playerCharacters = new ArrayList();
     public GameObject Self;
 
     // Update is called once per frame
@@ -299,52 +300,57 @@ public class PlayerSelect : MonoBehaviour
             (player3 == "Minion" || player3 == "Barbarian" || player3 == "Hog Rider" || player3 == "Goblin" || player3 == "Giant" || player3 == "Skeleton" || player3 == "Mini Pekka" || player3 == "Valkyrie" || player3 == "Knight") &&
             (player4 == "Minion" || player4 == "Barbarian" || player4 == "Hog Rider" || player4 == "Goblin" || player4 == "Giant" || player4 == "Skeleton" || player4 == "Mini Pekka" || player4 == "Valkyrie" || player4 == "Knight"))
         {
-            playerCharacters.Append(player1);
-            playerCharacters.Append(player2);
-            playerCharacters.Append(player3);
-            playerCharacters.Append(player4);
+            playerCharacters.Add(player1);
+            playerCharacters.Add(player2);
+            playerCharacters.Add(player3);
+            playerCharacters.Add(player4);
             Debug.Log(playerCharacters);
 
-            for (int i= 0; i < playerCharacters.Length; i++)
+            for (int i= 0; i < playerCharacters.Count; i++)
             {
                 if (playerCharacters[i] == "Mini Pekka")
                 {
+                    MiniPekka.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Giant")
                 {
+                    Giant.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Goblin")
                 {
+                    Goblin.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Barbarian")
                 {
+                    Barbarian.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Valkyrie")
                 {
+                    Valkyrie.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Minion")
                 {
+                    Minion.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Knight")
                 {
+                    Knight.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Hog Rider")
                 {
-                    Debug.Log(playerCharacters[i] + " " + i);
-                }
-                if (playerCharacters[i] == "Mini Pekka")
-                {
+                    Hog.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
                 if (playerCharacters[i] == "Skeleton")
                 {
+                    Skeleton.GetComponent<PlayerId>().playerId = i;
                     Debug.Log(playerCharacters[i] + " " + i);
                 }
 
