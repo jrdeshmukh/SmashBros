@@ -52,13 +52,17 @@ PrefabInstance:
       propertyPath: Speed
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 562113602695415333, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
+      propertyPath: JumpForce
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6513040022136065279, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6513040022136065279, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
       propertyPath: m_GravityScale
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7480582415647328087, guid: b2f268f3773710049b4ba774538b9cc5, type: 3}
       propertyPath: m_Name
@@ -108,3 +112,4 @@ MonoBehaviour:
   isAttacking: 0
   attackX: 50
   attackY: 20
+  colliding: 0

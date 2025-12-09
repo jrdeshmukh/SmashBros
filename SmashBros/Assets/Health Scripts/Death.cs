@@ -9,10 +9,13 @@ public class FallDeath : MonoBehaviour
 
     public float lives = 2f;
 
+    int myId;
+
     public Vector3 spawn;
 
     void Start()
     {
+        myId = gameObject.GetComponent<PlayerId>().playerId;
         
         if (knockoutCanvas != null)
             knockoutCanvas.gameObject.SetActive(false);
@@ -38,9 +41,9 @@ public class FallDeath : MonoBehaviour
         {
             Invoke("Respawn", 2f);
         }
-        else{
-            Invoke("GameOver", 2f);
-        }
+        // else{
+        //     Invoke("GameOver", 2f);
+        // }
 
     }
     void GameOver()
@@ -52,9 +55,8 @@ public class FallDeath : MonoBehaviour
 
     void Respawn()
     {
-
         knockoutCanvas.gameObject.SetActive(false);
-        GameController.playerHealths = new float[]{1,1};
+        GameController.playerHealths[myId] = 1;
         gameObject.SetActive(true);
         transform.position = spawn;
         lives--;

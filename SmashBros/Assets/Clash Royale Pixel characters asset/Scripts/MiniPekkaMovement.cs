@@ -20,18 +20,31 @@ public class MiniPekkaMovement : MonoBehaviour
     
     private float horizontalMovement;
     private Vector3 velocity = Vector3.zero;
+
+    private float inputX=0,jumpInput=0,attackInput=0;
     
     private void Awake()
     {
         
     }
+
+    public void setPlayerId(int id) {
+        gameObject.GetComponent<PlayerId>().playerId = id;
+    }
     
     void Update()
     {
+        int playerId = gameObject.GetComponent<PlayerId>().playerId;
+        gameObject.GetComponent<Rigidbody2D>().mass = GameController.playerHealths[playerId];
+
+        
+        inputX = GameController.playerInputs[playerId][0];
+        jumpInput = GameController.playerInputs[playerId][1];
+        attackInput = GameController.playerInputs[playerId][2];
         
         if (!isAttacking)
         {
-           if (Input.GetButtonDown("Jump"))
+           if (attackInput > 0)
            {
                isAttacking = true;
                gameObject.GetComponent<AttackScript>().setIsAttacking(true);
@@ -40,16 +53,18 @@ public class MiniPekkaMovement : MonoBehaviour
         }
         
         // Jump input (J key)
-        if (Input.GetKeyDown(KeyCode.W) && (isgrounded || jumpCount < maxJumps))
+        if (jumpInput > 0 && (isgrounded || jumpCount < maxJumps))
         {
             Jump();
         }
         
         // Horizontal movement (I for left, L for right)
         float moveInput = 0f;
-        if (Input.GetKey(KeyCode.A)) moveInput = -1f;  // Move left
-        else if (Input.GetKey(KeyCode.D)) moveInput = 1f;  // Move right
-        
+        if (inputX < 0) moveInput = -1f;  // Move left
+        else if (inputX > 0) moveInput = 1f;  // Move right
+        else {
+            moveInput = 0f;
+        }
         if (!isAttacking)
         {
             horizontalMovement = moveInput * Speed * Time.deltaTime;
@@ -70,11 +85,11 @@ public class MiniPekkaMovement : MonoBehaviour
         
         if (!isAttacking)
         {
-            horizontalMovement = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+            horizontalMovement = inputX * Speed * Time.deltaTime;
         }
         else
         {
-            horizontalMovement = Input.GetAxis("Horizontal") * 0 * Time.deltaTime;
+            horizontalMovement = inputX * 0 * Time.deltaTime;
         }
         MoveMiniPekka(horizontalMovement);
         

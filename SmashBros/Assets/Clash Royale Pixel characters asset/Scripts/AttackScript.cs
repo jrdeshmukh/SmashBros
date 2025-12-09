@@ -74,7 +74,12 @@ public class AttackScript : MonoBehaviour
     }
 
     void Update() {
-        gameObject.GetComponent<Rigidbody2D>().mass = GameController.playerHealths[myId];
+        // Debug.Log(myId);
+        Debug.Log(GameController.playerHealths[0]);
+        Debug.Log(GameController.playerHealths[1]);
+        Debug.Log(GameController.playerHealths[2]);
+        Debug.Log(GameController.playerHealths[3]);
+        // gameObject.GetComponent<Rigidbody2D>().mass = GameController.playerHealths[myId];
         if(isAttacking && !colliding) {
             isAttacking = false;
         }

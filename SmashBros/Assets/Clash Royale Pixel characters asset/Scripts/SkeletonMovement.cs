@@ -17,11 +17,11 @@ public class SkeletonMovement : MonoBehaviour
     private bool isgrounded = false;
     private int jumpCount = 0;
     private int maxJumps = 1;
-
-    public int playerId = 0;
     
     private float horizontalMovement;
     private Vector3 velocity = Vector3.zero;
+
+    private float inputX=0,jumpInput=0,attackInput=0;
     
     private void Awake()
     {
@@ -30,26 +30,80 @@ public class SkeletonMovement : MonoBehaviour
     
     void Update()
     {
-        
-        // Attack input (Enter key)
-        if (!isAttacking && Input.GetKeyDown(KeyCode.Return))
+        GameController.UpdateInputs();
+        try
         {
-            isAttacking = true;
-            gameObject.GetComponent<AttackScript>().setIsAttacking(true);
-            StartCoroutine(PekkaAttack());
+            // UnityEngine.Debug.Log("[SkeletonMovement] Starting Update");
+            
+            PlayerId playerIdComponent = gameObject.GetComponent<PlayerId>();
+            // if (playerIdComponent == null)
+            // {
+            //     UnityEngine.Debug.LogError($"[SkeletonMovement] PlayerId component not found on {gameObject.name}");
+            //     return;
+            // }
+            
+            int playerId = playerIdComponent.playerId;
+            gameObject.GetComponent<Rigidbody2D>().mass = GameController.playerHealths[playerId];
+            // UnityEngine.Debug.Log($"[SkeletonMovement] Player ID: {playerId}");
+            
+            // if (GameController.playerInputs == null)
+            // {
+            //     UnityEngine.Debug.LogError("[SkeletonMovement] playerInputs is null in GameController");
+            //     return;
+            // }
+            
+            // UnityEngine.Debug.Log($"[SkeletonMovement] playerInputs length: {GameController.playerInputs.Length}");
+            
+            // if (playerId < 0 || playerId >= GameController.playerInputs.Length)
+            // {
+            //     UnityEngine.Debug.LogError($"[SkeletonMovement] Invalid playerId: {playerId}. playerInputs length: {GameController.playerInputs.Length}");
+            //     return;
+            // }
+            
+            // UnityEngine.Debug.Log($"[SkeletonMovement] Accessing playerInputs[{playerId}]");
+            float[] playerInput = GameController.playerInputs[playerId];
+            
+            // if (playerInput == null || playerInput.Length < 3)
+            // {
+            //     UnityEngine.Debug.LogError($"[SkeletonMovement] playerInputs[{playerId}] is null or too small. Length: {playerInput?.Length ?? 0}");
+            //     return;
+            // }
+            
+            inputX = playerInput[0];
+            jumpInput = playerInput[1];
+            attackInput = playerInput[2];
+            
+            // UnityEngine.Debug.Log($"[SkeletonMovement] Inputs - X: {inputX}, Jump: {jumpInput}, Attack: {attackInput}");
+        }
+        catch (System.Exception e)
+        {
+            UnityEngine.Debug.LogError($"[SkeletonMovement] Error in Update: {e.Message}\n{e.StackTrace}");
+            return;
+        }
+        
+        if (!isAttacking)
+        {
+           if (attackInput > 0)
+           {
+               isAttacking = true;
+               gameObject.GetComponent<AttackScript>().setIsAttacking(true);
+               StartCoroutine(PekkaAttack());
+           }
         }
         
         // Jump input (J key)
-        if (Input.GetKeyDown(KeyCode.I) && (isgrounded || jumpCount < maxJumps))
+        if (jumpInput > 0 && (isgrounded || jumpCount < maxJumps))
         {
             Jump();
         }
         
-        // Horizontal movement (J for left, L for right)
+        // Horizontal movement (I for left, L for right)
         float moveInput = 0f;
-        if (Input.GetKey(KeyCode.J)) moveInput = -1f;  // Move left
-        else if (Input.GetKey(KeyCode.L)) moveInput = 1f;  // Move right
-        
+        if (inputX < 0) moveInput = -1f;  // Move left
+        else if (inputX > 0) moveInput = 1f;  // Move right
+                else {
+            moveInput = 0f;
+        }
         if (!isAttacking)
         {
             horizontalMovement = moveInput * Speed * Time.deltaTime;
@@ -67,21 +121,21 @@ public class SkeletonMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        // Horizontal movement (I for left, L for right)
-        float moveInput = 0f;
-        if (Input.GetKey(KeyCode.J)) moveInput = -1f;  // Move left
-        else if (Input.GetKey(KeyCode.L)) moveInput = 1f;  // Move right
         
         if (!isAttacking)
         {
-            horizontalMovement = moveInput * Speed * Time.deltaTime;
+            horizontalMovement = inputX * Speed * Time.deltaTime;
         }
         else
         {
-            horizontalMovement = 0;
+            horizontalMovement = inputX * 0 * Time.deltaTime;
         }
-        
         MoveMiniPekka(horizontalMovement);
+        
+        
+        
+        
+        
     }
     
     void MoveMiniPekka(float _horizontalMovement)
