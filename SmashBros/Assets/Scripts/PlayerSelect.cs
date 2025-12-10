@@ -313,46 +313,55 @@ public class PlayerSelect : MonoBehaviour
                 {
                     MiniPekka.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Mini Pekka" + MiniPekka.GetComponent<PlayerId>().playerId);
+                    MiniPekka.SetActive(true);
                 }
                 if (playerCharacters[i] == "Giant")
                 {
                     Giant.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Giant" + Giant.GetComponent<PlayerId>().playerId);
+                    Giant.SetActive(true);
                 }
                 if (playerCharacters[i] == "Goblin")
                 {
                     Goblin.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Goblin" + Goblin.GetComponent<PlayerId>().playerId);
+                    Goblin.SetActive(true);
                 }
                 if (playerCharacters[i] == "Barbarian")
                 {
                     Barbarian.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Barbarian" + Barbarian.GetComponent<PlayerId>().playerId);
+                    Barbarian.SetActive(true);
                 }
                 if (playerCharacters[i] == "Valkyrie")
                 {
                     Valkyrie.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Valkyrie" + Valkyrie.GetComponent<PlayerId>().playerId);
+                    Valkyrie.SetActive(true);
                 }
                 if (playerCharacters[i] == "Minion")
                 {
                     Minion.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Minion" + Minion.GetComponent<PlayerId>().playerId);
+                    Minion.SetActive(true);
                 }
                 if (playerCharacters[i] == "Knight")
                 {
                     Knight.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Knight" + Knight.GetComponent<PlayerId>().playerId);
+                    Knight.SetActive(true);
                 }
                 if (playerCharacters[i] == "Hog Rider")
                 {
                     Hog.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Hog" + Hog.GetComponent<PlayerId>().playerId);
+                    Hog.SetActive(true);
                 }
                 if (playerCharacters[i] == "Skeleton")
                 {
                     Skeleton.GetComponent<PlayerId>().playerId = i;
                     Debug.Log("Skeleton" + Skeleton.GetComponent<PlayerId>().playerId);
+                    Skeleton.SetActive(true);
                 }
 
             }
