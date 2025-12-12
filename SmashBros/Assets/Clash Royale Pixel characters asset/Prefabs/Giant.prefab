@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efa63ae5bf8e8a4cb87d7ec3965143e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 400
+  Speed: 450
   JumpForce: 30
   Damage: 10
   rb: {fileID: 3354852590904436206}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackScript
   isAttacking: 0
-  attackX: 350
+  attackX: 400
   attackY: 15
   colliding: 0
 --- !u!114 &7902044536670052247
