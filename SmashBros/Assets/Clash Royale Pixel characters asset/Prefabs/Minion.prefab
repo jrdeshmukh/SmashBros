@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61879652b39f92943ab99db6e576f9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 150
-  JumpForce: 20
+  Speed: 900
+  JumpForce: 30
   Damage: 10
   rb: {fileID: 4379437424792257943}
   spriteRenderer: {fileID: 1623176965842215532}
@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackScript
   isAttacking: 0
-  attackX: 50
-  attackY: 10
+  attackX: 100
+  attackY: 15
   colliding: 0
 --- !u!114 &4730357453258705613
 MonoBehaviour:

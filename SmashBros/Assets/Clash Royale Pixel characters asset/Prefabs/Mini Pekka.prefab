@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3992845255259525311}
   - component: {fileID: 562113602695415333}
   - component: {fileID: 4533810230957852115}
-  - component: {fileID: 8976302692239642193}
   - component: {fileID: 4343954167066427935}
   m_Layer: 0
   m_Name: Mini Pekka
@@ -214,22 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerId
   playerId: 0
---- !u!114 &8976302692239642193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480582415647328087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2ef6e28584c7546a4c3f6d39049f39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackScript
-  isAttacking: 0
-  attackX: 50
-  attackY: 10
-  colliding: 0
 --- !u!114 &4343954167066427935
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -41,15 +41,15 @@ public class FallDeath : MonoBehaviour
         {
             Invoke("Respawn", 2f);
         }
-        // else{
-        //     Invoke("GameOver", 2f);
-        // }
+        else{
+            Invoke("GameOver", 2f);
+        }
 
     }
     void GameOver()
     {
         knockoutCanvas.gameObject.SetActive(false);
-        gameOverCanvas.gameObject.SetActive(true);
+        // gameOverCanvas.gameObject.SetActive(true);
 
     }
 

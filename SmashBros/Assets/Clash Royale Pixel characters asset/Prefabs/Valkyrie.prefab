@@ -244,6 +244,6 @@ MonoBehaviour:
   Speed: 650
   JumpForce: 30
   Damage: 10
-  rb: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  animator: {fileID: 0}
+  rb: {fileID: 3085602473087523895}
+  spriteRenderer: {fileID: 5797777796370987632}
+  animator: {fileID: 5627478086323871418}
