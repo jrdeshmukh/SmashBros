@@ -42,14 +42,22 @@ public class GameController : MonoBehaviour
 
         float c1x = Input.GetAxis("Controller1X");
         float c2x = Input.GetAxis("Controller2X");
-        
-        GameController.playerInputs[2][0] = Mathf.Abs(c1x)>0.2?c1x:0;
-        GameController.playerInputs[2][1] = Input.GetKey(KeyCode.Joystick1Button1) ? 1f : 0f;
-        GameController.playerInputs[2][2] = Input.GetKey(KeyCode.Joystick1Button5) ? 1f : 0f;
-        
+
         GameController.playerInputs[3][0] = Mathf.Abs(c2x)>0.2?c2x:0;
         GameController.playerInputs[3][1] = Input.GetKey(KeyCode.Joystick2Button1) ? 1f : 0f;
         GameController.playerInputs[3][2] = Input.GetKey(KeyCode.Joystick2Button5) ? 1f : 0f;
+
+        
+        GameController.playerInputs[2][0] = Mathf.Abs(c1x)>0.2?c1x:0;
+        GameController.playerInputs[2][1] = Input.GetKey(KeyCode.JoystickButton1) ? 1f : 0f;
+        GameController.playerInputs[2][2] = Input.GetKey(KeyCode.JoystickButton5) ? 1f : 0f;
+
+        for(int i = 0; i < 3; i++) {
+            if(playerInputs[2][i]==playerInputs[3][i]){
+                playerInputs[2][i] = 0f;
+            }
+        }
+        
 
         // Debug.Log(GameController.playerInputs[2][0]);
         // Debug.Log(GameController.playerInputs[3][0]);

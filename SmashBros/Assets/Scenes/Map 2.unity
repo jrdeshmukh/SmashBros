@@ -263,7 +263,7 @@ MonoBehaviour:
   Hog: {fileID: 137125306}
   Goblin: {fileID: 1519610916}
   Knight: {fileID: 168887260}
-  Valkyrie: {fileID: 0}
+  Valkyrie: {fileID: 624630339}
   Barbarian: {fileID: 1066788379}
   Giant: {fileID: 2005650570}
   Self: {fileID: 8319471}
@@ -1407,6 +1407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valkyrie
       objectReference: {fileID: 0}
+    - target: {fileID: 1737614778911972354, guid: c57ae9e8ff4ab7c49b67d643741ed61d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7630819761301122356, guid: c57ae9e8ff4ab7c49b67d643741ed61d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.89
@@ -1636,6 +1640,10 @@ PrefabInstance:
     - target: {fileID: 6219689938321588123, guid: 0b3f3ebd01000c94ba6aabe54ea4929e, type: 3}
       propertyPath: m_Name
       value: Hog Rider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219689938321588123, guid: 0b3f3ebd01000c94ba6aabe54ea4929e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8493918124391804427, guid: 0b3f3ebd01000c94ba6aabe54ea4929e, type: 3}
       propertyPath: Speed
@@ -5846,7 +5854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826059743274422790, guid: e4d5d413d2c877142b2e78e3dc37afa2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5923,7 +5931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5522421755135130415, guid: 5acd3c094b93ee9418a6eef05ccbde1d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5942,6 +5950,7 @@ GameObject:
   - component: {fileID: 525853166}
   - component: {fileID: 525853165}
   - component: {fileID: 525853168}
+  - component: {fileID: 525853169}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6067,6 +6076,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &525853169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525853164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a03c0a1c42bf144dbc2f9052e773730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameController
 --- !u!1001 &548075578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7000,6 +7021,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &624630339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1737614778911972354, guid: c57ae9e8ff4ab7c49b67d643741ed61d, type: 3}
+  m_PrefabInstance: {fileID: 126423241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629726065
 GameObject:
   m_ObjectHideFlags: 0
@@ -10661,7 +10687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5069334541747738972, guid: dcd262221515755468cb24a42fb53163, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6265690442188841138, guid: dcd262221515755468cb24a42fb53163, type: 3}
       propertyPath: Speed
@@ -14857,7 +14883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3253272205782243397, guid: a201d5abb25c4834388e7149b9fe20b7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4386969806517358960, guid: a201d5abb25c4834388e7149b9fe20b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21072,7 +21098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739514650
 Transform:
   m_ObjectHideFlags: 0
@@ -21930,7 +21956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4225528592783516384, guid: 6c51d6f0a6007c04b940ea76d3851b35, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5313380730065417263, guid: 6c51d6f0a6007c04b940ea76d3851b35, type: 3}
       propertyPath: attackX
@@ -27475,6 +27501,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mini Pekka Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1910692780749766852, guid: 4b39e7384ede6ce44ba5145831bf8e6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2825601410901314412, guid: 4b39e7384ede6ce44ba5145831bf8e6b, type: 3}
       propertyPath: m_GravityScale
       value: 5
@@ -27583,6 +27613,10 @@ PrefabInstance:
     - target: {fileID: 5817847871588190848, guid: a6f54a4cbe6be374aab8a0d313fb19fc, type: 3}
       propertyPath: m_Name
       value: Skeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817847871588190848, guid: a6f54a4cbe6be374aab8a0d313fb19fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6769102114390535623, guid: a6f54a4cbe6be374aab8a0d313fb19fc, type: 3}
       propertyPath: m_Enabled

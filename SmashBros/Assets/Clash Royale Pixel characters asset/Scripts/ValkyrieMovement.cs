@@ -27,6 +27,10 @@ public class ValkyrieMovement : MonoBehaviour
     {
         
     }
+
+    public void setPlayerId(int id) {
+        gameObject.GetComponent<PlayerId>().playerId = id;
+    }
     
     void Update()
     {
@@ -58,7 +62,7 @@ public class ValkyrieMovement : MonoBehaviour
         float moveInput = 0f;
         if (inputX < 0) moveInput = -1f;  // Move left
         else if (inputX > 0) moveInput = 1f;  // Move right
-                else {
+        else {
             moveInput = 0f;
         }
         if (!isAttacking)
